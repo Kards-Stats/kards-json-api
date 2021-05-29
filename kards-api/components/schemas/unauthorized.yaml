@@ -1,0 +1,18 @@
+type: object
+properties:
+  error:
+    description: Information about the error returned
+    type: object
+    properties:
+      code:
+        type: string
+        example: user_error
+      description:
+        type: string
+        example: The server could not verify the user
+  message:
+    type: string
+    example: Unauthorized
+  status_code:
+    type: integer
+    example: 401

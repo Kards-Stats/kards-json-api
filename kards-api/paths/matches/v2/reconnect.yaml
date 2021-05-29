@@ -1,0 +1,31 @@
+post:
+  tags:
+    - Matches
+    - V2
+    - Reconnect
+  summary: Reconnect details for a match
+  description: Used to get details about a match that was in progress
+  operationId: reconnect-v2 
+  security:
+    - none: []
+    - jti_auth: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\session\response.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\unauthorized.yaml
+  requestBody:
+    description: Example body for logging in with steam
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\session\body.yaml
+    required: false

@@ -1,0 +1,54 @@
+type: object
+properties:
+  provider:
+    type: string
+    enum: [steam, xolla]
+    example: steam
+  provider_details:
+    type: object
+    properties:
+      steam_id:
+        type: string
+        example: "765611958473558392"
+      ticket:
+        description: App Ticket generated when launching a game through steam
+        type: string
+        example: "LONG STRING OF CHARACTERS"
+      appid:
+        type: string
+        example: "544810"
+  client_type:
+    description: Client being used to connect, hopefully soon to include IOS and Android
+    type: string
+    example: "UE4"
+  build:
+    description: Build version currently being used
+    type: string
+    example: Kards 1.1.4233
+  platform_type:
+    type: string
+    example: Windows
+  app_guid:
+    type: string
+    example: Kards
+  version:
+    type: string
+    example: "?"
+  platform_info:
+    description: Stringified object of platform details such as, cpu_vendor, gpu_brand, physical_memory_gb etc
+    type: string
+    example: "{\\\"cpu_vendor\\\": \\\"AuthenticAMD\\\", \\\"cpu_brand\\\": \\\"AMD Ryzen 7 5800X 8-Core Processor\\\", \\\"gpu_brand\\\": \\\"NVIDIA GeForce RTX 3070\\\", \\\"num_cores_physical\\\": 8, \\\"num_cores_logical\\\": 16, \\\"physical_memory_gb\\\": 32, \\\"hash\\\": \\\"ffe019d7cb9ce1e2675c746bcfc2a13713c0b44d12ad356d579194b93dd673d4\\\", \\\"locale\\\": \\\"en-AU\\\"}"
+  platform_version:
+    type: string
+    example: "Windows 10 (Release 2009)"
+  automatic_account_creation:
+    description: Presumably used on first launch, whether or not to auto create user from xolla or steam
+    type: boolean
+    example: true
+  username:
+    type: string
+    example: "steam:84739582947235839"
+  password:
+    description: Usually just the username repeated, no need to be alarmed
+    type: string
+    example: "steam:84739582947235839"

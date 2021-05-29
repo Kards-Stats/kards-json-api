@@ -1,0 +1,160 @@
+type: object
+properties:
+  build_info:
+    description: Information about the current build of kards
+    type: object
+    properties:
+      build_timestamp:
+        type: string
+        example: "2021-03-04T08:41:12Z"
+      commit_hash:
+        type: string
+        minLength: 8
+        maxLength: 8
+        example: 08e08f67
+      version:
+        type: string
+        example: UNKNOWN
+  current_user:
+    description: Information about the current user authentication
+    type: object
+    properties:
+      client_id:
+        type: integer
+        example: 10995372
+      exp:
+        type: integer
+        example: 1615541242
+      iat:
+        type: integer
+        example: 1615448242
+      identity_id:
+        type: integer
+        example: 200510637
+      iss:
+        type: string
+        example: kards-backend
+      jti:
+        type: string
+        example: uJ33h8Dfus7TJr583OnR
+      player_id:
+        type: integer
+        example: 510616
+      roles:
+        type: array
+        example: []
+      tenant:
+        type: string
+        example: 1939-kardslive
+      tier:
+        type: string
+        example: LIVE
+      user_id:
+        type: integer
+        example: 100572984
+      user_name:
+        type: string
+        example: steam:<steam_id>
+  endpoints:
+    description: List of endpoints for the service
+    type: object
+    properties:
+      clients:
+        type: string
+        example: "https://kards.live.1939api.com/clients/"
+      draft:
+        type: string
+        example: "https://kards.live.1939api.com/draft/"
+      email:
+        type: string
+        example: "https://kards.live.1939api.com/email/set"
+      lobbyplayers:
+        type: string
+        example: "https://kards.live.1939api.com/lobbyplayers"
+      matches:
+        type: string
+        example: "https://kards.live.1939api.com/matches"
+      matches2:
+        type: string
+        example: "https://kards.live.1939api.com/matches/v2/"
+      my_client:
+        type: string
+        example: "https://kards.live.1939api.com/clients/10995372"
+      my_draft:
+        type: string
+        example: "https://kards.live.1939api.com/draft/510616"
+      my_items:
+        type: string
+        example: "https://kards.live.1939api.com/items/510616"
+      my_plyer:
+        type: string
+        example: "https://kards.live.1939api.com/players/510616"
+      my_user:
+        type: string
+        example: "https://kards.live.1939api.com/users/100572984"
+      players:
+        type: string
+        example: "https://kards.live.1939api.com/players"
+      root:
+        type: string
+        example: "https://kards.live.1939api.com"
+      session:
+        type: string
+        example: "https://kards.live.1939api.com/session"
+      store:
+        type: string
+        example: "https://kards.live.1939api.com/store/"
+      tourneys:
+        type: string
+        example: "https://kards.live.1939api.com/tourney/"
+      transactions:
+        type: string
+        example: "https://kards.live.1939api.com/store/txn"
+      user-identities:
+        type: string
+        example: "https://kards.live.1939api.com/user-identities"
+      user_identities:
+        description: Looks like a fix for a mistake they made along the way
+        type: string
+        example: "https://kards.live.1939api.com/user-identities"
+      users:
+        type: string
+        example: "https://kards.live.1939api.com/users"
+  host_info:
+    description: Information about the current host being used
+    type: object
+    properties:
+      container_image:
+        type: string
+        example: kards-backend-live
+      docker_image:
+        type: string
+        example: 618005890699.dkr.ecr.eu-west-1.amazonaws.com/kards-backend-live
+      host_address:
+        type: string
+        example: 10.75.1.134
+      host_name:
+        description: Internal host name
+        type: string
+        example: a451c432e4d7
+      instance_id:
+        description: Most likely instance id of the AWS instance
+        type: string
+        example: i-08306f4797229ff7f
+  server_time:
+    description: Current time of the request on the server
+    type: string
+    example: "2021-03-11T09:27:23.307837Z"
+  service_name:
+    description: Internal name for service
+    type: string
+    example: "kards-backend"
+  tenant_name:
+    description: Internal tenant name
+    type: string
+    example: "1939-kardslive"
+  tier_name:
+    description: Tier currently being used
+    type: string
+    example: "LIVE"
+

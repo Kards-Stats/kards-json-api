@@ -1,0 +1,24 @@
+get:
+  tags:
+    - Root
+  summary: Root path
+  description: Provides information about endpoints
+  operationId: root
+  security:
+    - none: []
+    - jti_auth: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\root.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\unauthorized.yaml
+  requestBody:
+    required: false

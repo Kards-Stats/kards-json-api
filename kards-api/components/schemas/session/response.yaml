@@ -1,0 +1,183 @@
+type: object
+properties:
+  achievements_url:
+    type: string
+    example: "https://kards.live.1939api.com/players/510616/achievements"
+  britain_level:
+    type: integer
+    example: 14
+  britain_xp:
+    type: integer
+    example: 3
+  client_id:
+    type: integer
+    example: 10995372
+  client_url:
+    type: string
+    example: "https://kards.live.1939api.com/clients/10995372"
+  dailymissions_url:
+    type: string
+    example: "https://kards.live.1939api.com/players/510616/dailymissions"
+  decks_url:
+    type: string
+    example: "https://kards.live.1939api.com/players/510616/decks"
+  draft_admissions:
+    type: integer
+    example: 2
+  dust:
+    type: integer
+    example: 268
+  email:
+    type: string
+    example: example@example.com
+  email_reward_received:
+    type: boolean
+    example: true
+  email_verified:
+    type: boolean
+    example: true
+  germany_level:
+    type: integer
+    example: 15
+  germany_xp:
+    type: integer
+    example: 11
+  gold:
+    type: integer
+    example: 27
+  has_been_officer:
+    type: boolean
+    example: false
+  heartbeat_url:
+    type: string
+    example: "https://kards.live.1939api.com/players/510616/heartbeat"
+  is_officer:
+    type: boolean
+    example: false
+  is_online:
+    description: Never seen this true before
+    type: boolean
+    example: false
+  japan_level:
+    type: integer
+    example: 29
+  japan_xp:
+    type: integer
+    example: 44
+  jti:
+    type: string
+    example: "uD35h0Srgd8TFw378GnC"
+  jwt:
+    type: string
+    example: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX25hbWUiOiJzdGVhbTo3NjU2MTE5NTg0NzM1NTgzOTIiLCJ1c2VyX2lkIjoxMDA1NzI5ODQsImlkZW50aXR5X2lkIjoyMDA1MTA2MzcsInJvbGVzIjpbXSwiaWF0IjoxNjE1NDU0ODQyLCJleHAiOjE2MjE0MTI1NzksImp0aSI6InVEMzVoMFNyZ2Q4VEZ3Mzc4R25DIiwiaXNzIjoia2FyZHMtYmFja2VuZCIsInRpZXIiOiJMSVZFIiwidGVuYW50IjoiMTkzOS1rYXJkc2xpdmUiLCJjbGllbnRfaWQiOjEwOTk1MzcyLCJwbGF5ZXJfaWQiOjUxMDYxNn0.B5GXHUyPadYhmlsJYRSS67QXd8PXpwHpDT1Nwimud-A"
+  last_daily_mission_cancel:
+    type: string
+    example: "2021-03-06T04:38:42.395612Z"
+  last_daily_mission_renewal:
+    type: string
+    example: "2021-03-10T09:44:19.469562Z"
+  last_heartbeat:
+    type: string
+    example: "2021-03-11T09:27:22.728173Z"
+  launch_messages:
+    type: array
+    example: []
+  library_url:
+    type: string
+    example: "https://kards.live.1939api.com/players/510616/library"
+  new_cards:
+    type: array
+    example: []
+  new_player_login_reward:
+    type: object
+    properties:
+      day:
+        type: integer
+        example: 8
+      reset:
+        type: string
+        example: "2021-01-11 13:00:00"
+      seconds:
+        type: integer
+        example: -5084842
+  npc:
+    description: Will never be true unless you have access to the NPC accounts
+    type: boolean
+    example: false
+  online_flag:
+    type: boolean
+    example: true
+  packs_url:
+    type: string
+    example: "https://kards.live.1939api.com/players/510616/packs"
+  player_id:
+    type: integer
+    example: 510616
+  player_name:
+    type: string
+    example: "KlutzyBubbles"
+  player_tag:
+    type: integer
+    example: 1234
+  player_url:
+    type: string
+    example: "https://kards.live.1939api.com/players/510616"
+  rewards:
+    type: array
+    example: []
+  season_end:
+    type: string
+    example: "2021-04-01T00:00:00Z"
+  season_wins:
+    type: integer
+    example: 12
+  soviet_level:
+    type: integer
+    example: 16
+  soviet_xp:
+    type: integer
+    example: 16
+  stars:
+    type: integer
+    example: 41
+  tutorials_done:
+    type: integer
+    example: 2
+  tutorials_finished:
+    type: array
+    example: [
+      "britain",
+      "mulligan",
+      "fighter",
+      "deployment",
+      "blitz",
+      "guard",
+      "smokescreen",
+      "retreat",
+      "fury",
+      "germany",
+      "artillery",
+      "rout",
+      "heavy_armor",
+      "soviet",
+      "usa",
+      "japan",
+      "factions",
+      "deck_builder",
+      "draft_1",
+      "draft_nation",
+      "draft_ally",
+      "draft_kredits"
+    ]
+  usa_level:
+    type: integer
+    example: 11
+  usa_xp:
+    type: integer
+    example: 32
+  user_id:
+    type: integer
+    example: 100572984
+  user_url:
+    type: string
+    example: "https://kards.live.1939api.com/users/100572984"
