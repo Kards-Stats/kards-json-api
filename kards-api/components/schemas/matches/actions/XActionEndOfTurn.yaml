@@ -1,0 +1,31 @@
+type: object
+properties:
+  action_data:
+    type: object
+    properties:
+      reason:
+        type: string
+        enum: [endTurnButton]
+        example: endTurnButton
+      side:
+        type: string
+        enum: [left, right]
+        example: left
+  action_id:
+    type: integer
+    example: 11
+  action_type:
+    type: string
+    example: XActionEndOfTurn
+  player_id:
+    type: integer
+    example: 123456
+  side:
+    type: string
+    enum: [left, right]
+    example: left
+  sub_actions:
+    type: 'null'
+  turn_number:
+    type: integer
+    example: 4

@@ -26,6 +26,8 @@ info:
     - Staging and dev environments are simply unknown as i have not spent enough time with the api to replicate the game in order to test them.
 
     - Authentication is mainly documented using steam, the only difference is the provider_details in the session post when getting a JWT using xolla
+
+    - It is currently unknown as to how actions during a game are logged or created
 servers:
   - url: 'https://kards.live.1939api.com/'
   - url: 'https://kards.staging.1939api.com/'
@@ -35,6 +37,8 @@ paths:
     $ref: paths\root.yaml
   /session:
     $ref: paths\session.yaml
+  /matches/v2/{match_id}/actions/{action_id}:
+    $ref: paths\matches\v2\{match_id}\actions\{action_id}.yaml
 components:
   securitySchemes:
     jti_auth:

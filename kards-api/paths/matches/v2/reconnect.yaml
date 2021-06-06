@@ -7,7 +7,6 @@ post:
   description: Used to get details about a match that was in progress
   operationId: reconnect-v2 
   security:
-    - none: []
     - jti_auth: []
   responses:
     '200':

@@ -1,0 +1,25 @@
+type: object
+properties:
+  actions:
+    oneOf:
+      - $ref: '.\XActionEndOfTurn.yaml'
+      - $ref: '.\XActionPlayCardFromHand.yaml'
+  match:
+    type: object
+    properties:
+      player_status_left:
+        type: string
+        example: mulligan_done
+      player_status_right:
+        oneOf:
+          - type: string
+            enum: [mulligan_start, mulligan_done]
+            example: mulligan_done
+          - type: 'null'
+      status:
+        type: string
+        enum: [running, finished, loading]
+        example: running
+  opponent_polling:
+    type: boolean
+    example: true

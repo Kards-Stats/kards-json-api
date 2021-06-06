@@ -1,0 +1,21 @@
+get:
+  tags:
+    - Match Actions
+  summary: Get details of an action
+  description: Used to get details about specific action turn
+  operationId: match-action-id
+  security:
+    - jti_auth: []
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ..\..\..\..\components\schemas\matches\actions\action.yaml
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ..\..\..\..\components\schemas\unauthorized.yaml

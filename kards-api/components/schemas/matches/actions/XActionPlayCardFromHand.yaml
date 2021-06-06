@@ -1,0 +1,44 @@
+type: object
+properties:
+  action_data:
+    type: object
+    properties:
+      card_name:
+        type: string
+        example: card_unit_5th_brigade
+      cardID:
+        type: integer
+        example: 35
+      enterPlayOnTurn:
+        type: integer
+        example: 4
+      location:
+        type: string
+        enum: [Board_HQLeft, Board_HQRight]
+        example: card_unit_5th_brigade
+      locationNumber:
+        type: integer
+        example: 1
+  action_id:
+    type: integer
+    example: 10
+  action_type:
+    type: string
+    example: XActionPlayCardFromHand
+  player_id:
+    type: integer
+    example: 123456
+  side:
+    type: string
+    enum: [left, right]
+    example: left
+  sub_actions:
+    type: array
+    items:
+      anyOf:
+        - $ref: '.\sub\ZActionChangeKredits.yaml'
+        - $ref: '.\sub\ZActionMoveCardToNewLocation.yaml'
+        - $ref: '.\sub\ZActionPlayCardFromHand.yaml'
+  turn_number:
+    type: integer
+    example: 4

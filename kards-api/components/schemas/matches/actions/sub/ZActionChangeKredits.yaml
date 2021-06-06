@@ -1,0 +1,24 @@
+type: object
+properties:
+  name:
+    type: string
+    example: ZActionMoveCardToNewLocation
+  side:
+    type: string
+    enum: [left, right]
+    example: left
+  newKredits:
+    type: integer
+    example: 0
+  newMaxKredits:
+    type: integer
+    example: 2
+  oldKredits:
+    type: integer
+    example: 2
+  oldMaxKredits:
+    type: integer
+    example: 2
+  triggerCardID:
+    type: integer
+    example: 35

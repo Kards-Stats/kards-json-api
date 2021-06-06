@@ -1,0 +1,34 @@
+type: object
+properties:
+  attackLeft:
+    type: integer
+    example: 1
+  movementLeft:
+    type: integer
+    example: 1
+  name:
+    type: string
+    example: ZActionPlayCardFromHand
+  cardID:
+    type: integer
+    example: 35
+  enterPlayOnTurn:
+    type: integer
+    example: 4
+  location:
+    type: string
+    enum: [Board_HQLeft, Board_HQLeft]
+    example: Board_HQLeft
+  newLocationNumber:
+    type: integer
+    example: 1
+  nonVisualLocationNumber:
+    type: integer
+    example: 1
+  oldLocation:
+    anyOf:
+      - type: String
+        example: Hand_Left
+      - type: integer
+        example: 1
+
