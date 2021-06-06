@@ -1,0 +1,2358 @@
+{
+	"info": {
+		"_postman_id": "bac84f9d-3d8f-4f38-a0ae-3426e1e8e5ca",
+		"name": "Kards",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Player",
+			"item": [
+				{
+					"name": "Decks",
+					"item": [
+						{
+							"name": "Specific Deck ID",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/players/{{player_id}}/decks/{{my_deck_id}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{player_id}}",
+										"decks",
+										"{{my_deck_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Deck",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/players/{{player_id}}/decks/{{my_deck_id}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{player_id}}",
+										"decks",
+										"{{my_deck_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Specific Deck Number",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/players/{{player_id}}/decks/0",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{player_id}}",
+										"decks",
+										"0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "All My Decks",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"postman.setEnvironmentVariable(\"my_deck_id\", jsonData[0].id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/players/{{player_id}}/decks",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{player_id}}",
+										"decks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Deck",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name\": \"Germany Deck 1\", \"main_faction\": \"Germany\", \"ally_faction\": \"USA\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/players/{{player_id}}/decks",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{player_id}}",
+										"decks"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Card to Deck",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"cards\": [{\"deck_id\": 0,\"card_type\": \"card_event_overwhelming_force\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 0,\"recently_crafted_count\": 0}], \"action\": \"add\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/players/{{player_id}}/decks/{{my_deck_id}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{player_id}}",
+										"decks",
+										"{{my_deck_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Card from Deck",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"cards\": [{\"deck_id\": 0,\"card_type\": \"card_event_overwhelming_force\",\"count\": 3,\"gold_card_count\": 0,\"wanted_card_count\": 0,\"recently_crafted_count\": 0}], \"action\": \"remove\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/players/{{player_id}}/decks/{{my_deck_id}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{player_id}}",
+										"decks",
+										"{{my_deck_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Fill Cards in Deck",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"cards\": [{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_location_berlin\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_event_overwhelming_force\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_sd_kfz222x\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_event_careless_talk\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_event_overcast\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_event_supply_chain\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_panzergrenadier\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_henschel_hs_126\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_3_fallschirmjager\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_event_joint_operation\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_stug_iii_g_schurzen\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_event_air_blitz\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_flammpanzer\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_75_mm_pack_howitzer\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_grenadier_245\",\"count\": 1,\"gold_card_count\": 1,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_361_light_regiment\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_event_reichsbank\",\"count\": 2,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_panzer_38_t\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_ju_87_b2\",\"count\": 2,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_event_in_hour_of_need\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_60th_infantry_regiment\",\"count\": 0,\"gold_card_count\": 2,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_event_bolster_the_ranks\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_panzer_iii_j\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_me_bf_109_v2\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_pak_40\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_event_stars_n_stripes\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_event_we_can_do_it\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_corsair_f4u\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_event_entrapment\",\"count\": 2,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_panzer_iv_g\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_b_25_mitchell\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_panzer_iv_f2\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_event_exploit_the_gap\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_junkers_ju_188\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32},{\"deck_id\": {{my_deck_id}},\"card_type\": \"card_unit_me_410_hornisse\",\"count\": 1,\"gold_card_count\": 0,\"wanted_card_count\": 26,\"recently_crafted_count\": 32}], \"action\": \"fill\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/players/{{player_id}}/decks/{{my_deck_id}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{player_id}}",
+										"decks",
+										"{{my_deck_id}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Daily Missions",
+					"item": [
+						{
+							"name": "Daily Missions",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/players/{{player_id}}/dailymissions",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{player_id}}",
+										"dailymissions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Friend Daily Missions",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/players/{{friend_player_id}}/dailymissions",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{friend_player_id}}",
+										"dailymissions"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Notifications",
+					"item": [
+						{
+							"name": "Notifications",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/players/notifications/{{player_id}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"notifications",
+										"{{player_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notifications Others",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/players/notifications/{{friend_player_id}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"notifications",
+										"{{friend_player_id}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Friends",
+					"item": [
+						{
+							"name": "Friend Friends",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{host}}/players/{{friend_player_id}}/friends?action=player-friends",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{friend_player_id}}",
+										"friends"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "player-friends"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Friends",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/players/{{player_id}}/friends?action=player-friends",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{player_id}}",
+										"friends"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "player-friends"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Friend",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"user-agent": true,
+									"accept": true,
+									"accept-encoding": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"friend_tag\": 3097, \"friend_name\":\"KlutzyBubbles\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/players/{{player_id}}/friends",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{player_id}}",
+										"friends"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Friend",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"user-agent": true,
+									"accept": true,
+									"accept-encoding": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"friend_id\": 536993}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/players/{{player_id}}/friends",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{player_id}}",
+										"friends"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Heartbeat",
+					"item": [
+						{
+							"name": "Heartbeat Info",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/players/{{friend_id}}/heartbeat",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{friend_id}}",
+										"heartbeat"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put Heartbeat",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/players/{{friend_id}}/heartbeat",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{friend_id}}",
+										"heartbeat"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Heartbeat",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/players/{{friend_id}}/heartbeat",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{friend_id}}",
+										"heartbeat"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Packs",
+					"item": [
+						{
+							"name": "Packs",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/players/{{player_id}}/packs",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{player_id}}",
+										"packs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Open Pack",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"id\": 10591375}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/players/{{player_id}}/packs",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"players",
+										"{{player_id}}",
+										"packs"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": ":id:",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/players/{{player_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"players",
+								"{{player_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": ":id:",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"action\":\"set-busy-status\",\"value\":\"0\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/players/{{player_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"players",
+								"{{player_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": ":id: Other",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/players/{{friend_player_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"players",
+								"{{friend_player_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resources",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/players/{{player_id}}/resources",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"players",
+								"{{player_id}}",
+								"resources"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Library",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/players/{{player_id}}/library",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"players",
+								"{{player_id}}",
+								"library"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logger",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"install_guid\": \"\", \"run_id\": 396, \"error\": \"Fetching stats taking longer than 5 seconds.\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/players/{{player_id}}/logger",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"players",
+								"{{player_id}}",
+								"logger"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Achievements (Deprecated)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/players/{{player_id}}/achievements",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"players",
+								"{{player_id}}",
+								"achievements"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "List Users (Used to work)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User (Used to work)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/users/{{user_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Other User (Used to work)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/users/{{friend_user_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"{{friend_user_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Playerstats",
+			"item": [
+				{
+					"name": "PlayerStats",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/playerstats/{{player_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"playerstats",
+								"{{player_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Friend PlayerStats",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/playerstats/{{friend_player_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"playerstats",
+								"{{friend_player_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "Client ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/clients/{{client_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"clients",
+								"{{client_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Other Client (Used to work)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/clients/{{friend_client_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"clients",
+								"{{friend_client_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clients (Used to work)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/clients",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Client Info",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "1939-kards-5dcba429f:Kards 1.1.4233",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/clients/{{client_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"clients",
+								"{{client_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Items",
+			"item": [
+				{
+					"name": "My Items",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/items/{{player_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"items",
+								"{{player_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Other People Items",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"my_client_url\", jsonData.endpoints.my_client);\r",
+									"postman.setEnvironmentVariable(\"my_player_url\", jsonData.endpoints.my_player);\r",
+									"postman.setEnvironmentVariable(\"my_user_url\", jsonData.endpoints.my_user);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "1939-kards-5dcba429f:Kards 1.1.4233",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/items/{{friend_player_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"items",
+								"{{friend_player_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Campaigns",
+			"item": [
+				{
+					"name": "Campaign Info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/campaign/{{player_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"campaign",
+								"{{player_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Campaign Info Others",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/campaign/{{friend_player_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"campaign",
+								"{{friend_player_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Matches",
+			"item": [
+				{
+					"name": "V2",
+					"item": [
+						{
+							"name": "Mulligan",
+							"item": [
+								{
+									"name": "Post Mulligan Choice",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "jti {{jti}}",
+												"type": "text"
+											},
+											{
+												"key": "Drift-Api-Key",
+												"value": "{{drift-api-key}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"discarded_card_ids\": []}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/matches/v2/32838726/mulligan",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"matches",
+												"v2",
+												"32838726",
+												"mulligan"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Left Mulligan",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "jti {{jti}}",
+												"type": "text"
+											},
+											{
+												"key": "Drift-Api-Key",
+												"value": "{{drift-api-key}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{host}}/matches/v2/32838726/mulligan/left",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"matches",
+												"v2",
+												"32838726",
+												"mulligan",
+												"left"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Right Mulligan",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "jti {{jti}}",
+												"type": "text"
+											},
+											{
+												"key": "Drift-Api-Key",
+												"value": "{{drift-api-key}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{host}}/matches/v2/32838726/mulligan/right",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"matches",
+												"v2",
+												"32838726",
+												"mulligan",
+												"right"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Actions",
+							"item": [
+								{
+									"name": "Pre Match Action",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "jti {{jti}}",
+												"type": "text"
+											},
+											{
+												"key": "Drift-Api-Key",
+												"value": "{{drift-api-key}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{ \"action\": \"lvl-loaded\" }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/matches/v2/32838726",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"matches",
+												"v2",
+												"32838726"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Match Action",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "jti {{jti}}",
+												"type": "text"
+											},
+											{
+												"key": "Drift-Api-Key",
+												"value": "{{drift-api-key}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{host}}/matches/v2/32838726/actions/1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"matches",
+												"v2",
+												"32838726",
+												"actions",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Post Action",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "jti {{jti}}",
+												"type": "text"
+											},
+											{
+												"key": "Drift-Api-Key",
+												"value": "{{drift-api-key}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{ \"action_id\": 3, \"action_type\": \"XActionEndOfTurn\", \"player_id\": 510317, \"action_data\": {\"side\": \"right\",\"reason\": \"endTurnButton\"} }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/matches/v2/32838726/actions",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"matches",
+												"v2",
+												"32838726",
+												"actions"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Match Status",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "jti {{jti}}",
+												"type": "text"
+											},
+											{
+												"key": "Drift-Api-Key",
+												"value": "{{drift-api-key}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{host}}/matches/v2/32838726/actions/0",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"matches",
+												"v2",
+												"32838726",
+												"actions",
+												"0"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Matches V2",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/matches/v2/",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"matches",
+										"v2",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Match Info",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/matches/v2/32838726",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"matches",
+										"v2",
+										"32838726"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reconnect Match Info",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/matches/v2/reconnect",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"matches",
+										"v2",
+										"reconnect"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post Match Info",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "jti {{jti}}",
+										"type": "text"
+									},
+									{
+										"key": "Drift-Api-Key",
+										"value": "{{drift-api-key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/matches/v2/32838726/post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"matches",
+										"v2",
+										"32838726",
+										"post"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Matches V1 (Deprecated)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/matches",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"matches"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lobby Players",
+			"item": [
+				{
+					"name": "Join Match Lobby Players",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"player_id\": 510317, \"deck_id\": 5885960, \"extra_data\": \"unranked\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/lobbyplayers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"lobbyplayers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lobby Players",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jti {{jti}}",
+								"type": "text"
+							},
+							{
+								"key": "Drift-Api-Key",
+								"value": "{{drift-api-key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/lobbyplayers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"lobbyplayers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Drift-Api-Key",
+						"value": "{{drift-api-key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}",
+					"host": [
+						"{{host}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Session",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"jti\", jsonData.jti);\r",
+							"postman.setEnvironmentVariable(\"client_id\", jsonData.client_id);\r",
+							"postman.setEnvironmentVariable(\"user_id\", jsonData.user_id);\r",
+							"postman.setEnvironmentVariable(\"player_id\", jsonData.player_id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Drift-Api-Key",
+						"value": "{{drift-api-key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"provider\":\"steam\",\r\n    \"provider_details\": {\r\n        \"steam_id\":\"{{steam_id}}\",\r\n        \"ticket\":\"{{steam_ticket}}\",\r\n        \"appid\":\"{{app_id}}\"\r\n    },\r\n    \"client_type\":\"UE4\",\r\n    \"build\":\"{{version}}\",\r\n    \"platform_type\":\"\",\r\n    \"app_guid\":\"Kards\",\r\n    \"version\":\"?\",\r\n    \"platform_info\":\"\",\r\n    \"platform_version\":\"\",\r\n    \"automatic_account_creation\":true,\r\n    \"username\":\"steam:{{steam_id}}\",\r\n    \"password\":\"steam:{{steam_id}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://kards.live.1939api.com/session",
+					"protocol": "https",
+					"host": [
+						"kards",
+						"live",
+						"1939api",
+						"com"
+					],
+					"path": [
+						"session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Home Authenticated",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jti {{jti}}",
+						"type": "text"
+					},
+					{
+						"key": "Drift-Api-Key",
+						"value": "{{drift-api-key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}",
+					"host": [
+						"{{host}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Identities",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jti {{jti}}",
+						"type": "text"
+					},
+					{
+						"key": "Drift-Api-Key",
+						"value": "{{drift-api-key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/user-identities",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"user-identities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Config",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jti {{jti}}",
+						"type": "text"
+					},
+					{
+						"key": "Drift-Api-Key",
+						"value": "{{drift-api-key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/config",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"config"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
