@@ -2,8 +2,8 @@ type: object
 properties:
   actions:
     oneOf:
-      - $ref: '.\XActionEndOfTurn.yaml'
-      - $ref: '.\XActionPlayCardFromHand.yaml'
+      - $ref: './XActionEndOfTurn.yaml'
+      - $ref: './XActionPlayCardFromHand.yaml'
   match:
     type: object
     properties:

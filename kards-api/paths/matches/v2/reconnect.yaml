@@ -14,17 +14,17 @@ post:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\session\response.yaml
+            $ref: ../components/schemas/session/response.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\unauthorized.yaml
+            $ref: ../components/schemas/unauthorized.yaml
   requestBody:
     description: Example body for logging in with steam
     content:
       application/json:
         schema:
-          $ref: ..\components\schemas\session\body.yaml
+          $ref: ../components/schemas/session/body.yaml
     required: false

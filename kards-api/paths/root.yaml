@@ -13,10 +13,10 @@ get:
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\root.yaml
+            $ref: ../components/schemas/root.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\components\schemas\unauthorized.yaml
+            $ref: ../components/schemas/unauthorized.yaml
