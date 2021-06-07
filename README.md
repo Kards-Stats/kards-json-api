@@ -1,5 +1,9 @@
 # Kards JSON API OpenAPI Definition
 
+**[![Build and Deploy](https://github.com/Kards-Stats/kards-json-api/actions/workflows/build-deploy.yml/badge.svg)](https://github.com/Kards-Stats/kards-json-api/actions/workflows/build-deploy.yml)**
+
+Docs can be found here https://kards-stats.github.io/kards-json-api/
+
 ## What is Kards
 
 Kards is 'THE MODERN CCG MEETS CLASSIC WAR GAMING' [Kards Website](https://www.kards.com/).
