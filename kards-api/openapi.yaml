@@ -6,6 +6,9 @@ info:
     url: 'http://github.com/klutzybubbles/kards-json-api'
   x-logo:
     url: 'https://redocly.github.io/openapi-template/logo.png'
+  license:
+    name: MIT
+    url: https://github.com/Kards-Stats/kards-json-api/blob/master/LICENSE
   description: >
     # Introduction
 
@@ -29,9 +32,9 @@ info:
 
     - It is currently unknown as to how actions during a game are logged or created
 servers:
-  - url: 'https://kards.live.1939api.com/'
-  - url: 'https://kards.staging.1939api.com/'
-  - url: 'https://kards.dev.1939api.com/'
+  - url: 'https://kards.live.1939api.com'
+  - url: 'https://kards.staging.1939api.com'
+  - url: 'https://kards.dev.1939api.com'
 paths:
   /:
     $ref: paths\root.yaml
@@ -44,4 +47,7 @@ components:
     jti_auth:
       type: http
       scheme: jti
+    none:
+      type: http
+      scheme: none
 

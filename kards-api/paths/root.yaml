@@ -20,5 +20,3 @@ get:
         application/json:
           schema:
             $ref: ..\components\schemas\unauthorized.yaml
-  requestBody:
-    required: false
