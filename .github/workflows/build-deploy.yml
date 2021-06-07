@@ -17,6 +17,7 @@ jobs:
           npm run test
   build-and-deploy:
     needs: test
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
