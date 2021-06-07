@@ -27,7 +27,7 @@ properties:
     example: 1
   oldLocation:
     anyOf:
-      - type: String
+      - type: string
         example: Hand_Left
       - type: integer
         example: 1

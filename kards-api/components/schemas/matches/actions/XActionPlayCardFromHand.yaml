@@ -36,9 +36,9 @@ properties:
     type: array
     items:
       anyOf:
-        - $ref: '.\sub\ZActionChangeKredits.yaml'
-        - $ref: '.\sub\ZActionMoveCardToNewLocation.yaml'
-        - $ref: '.\sub\ZActionPlayCardFromHand.yaml'
+        - $ref: './sub/ZActionChangeKredits.yaml'
+        - $ref: './sub/ZActionMoveCardToNewLocation.yaml'
+        - $ref: './sub/ZActionPlayCardFromHand.yaml'
   turn_number:
     type: integer
     example: 4

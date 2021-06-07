@@ -6,16 +6,31 @@ get:
   operationId: match-action-id
   security:
     - jti_auth: []
+  parameters:
+    - name: match_id
+      in: path
+      description: ID of the match
+      required: true
+      schema:
+        type: integer
+        format: int32
+    - name: action_id
+      in: path
+      description: ID of the action, or 1 for all actions of a post match
+      required: true
+      schema:
+        type: integer
+        format: int32
   responses:
     '200':
       description: OK
       content:
         application/json:
           schema:
-            $ref: ..\..\..\..\..\components\schemas\matches\actions\action.yaml
+            $ref: ../../../../../components/schemas/matches/actions/action.yaml
     '401':
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: ..\..\..\..\..\components\schemas\unauthorized.yaml
+            $ref: ../../../../../components/schemas/unauthorized.yaml
