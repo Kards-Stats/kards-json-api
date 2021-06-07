@@ -1,5 +1,13 @@
 # Kards JSON API OpenAPI Definition
 
+## What is Kards
+
+Kards is 'THE MODERN CCG MEETS CLASSIC WAR GAMING' [Kards Website](https://www.kards.com/).
+
+The one thing it lacks is any form of statistics or history data. This is why i dove head first into the game to figure out if i could grab that informatin myself, this is the result of my findings.
+
+The postman collection is currently the most complete collection of requests i have found, although the web socket communications are still yet to be decoded.
+
 ## OpenAPI Definition is WIP
 
 OpenAPI definition of the kards backend API (not the web socket). Hopefully this can help myself and others create some useful applications for kards, until they release an official API.
