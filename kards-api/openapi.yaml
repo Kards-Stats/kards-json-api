@@ -37,11 +37,11 @@ servers:
   - url: 'https://kards.dev.1939api.com'
 paths:
   /:
-    $ref: paths\root.yaml
+    $ref: paths/root.yaml
   /session:
-    $ref: paths\session.yaml
+    $ref: paths/session.yaml
   /matches/v2/{match_id}/actions/{action_id}:
-    $ref: paths\matches\v2\{match_id}\actions\{action_id}.yaml
+    $ref: paths/matches/v2/{match_id}/actions/{action_id}.yaml
 components:
   securitySchemes:
     jti_auth:
