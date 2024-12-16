@@ -8,7 +8,7 @@ Docs can be found here https://kards-stats.github.io/kards-json-api/
 
 Kards is 'THE MODERN CCG MEETS CLASSIC WAR GAMING' [Kards Website](https://www.kards.com/).
 
-The one thing it lacks is any form of statistics or history data. This is why i dove head first into the game to figure out if i could grab that informatin myself, this is the result of my findings.
+The one thing it lacks is any form of statistics or history data. This is why i dove head first into the game to figure out if i could grab that information myself, this is the result of my findings.
 
 The postman collection is currently the most complete collection of requests i have found, although the web socket communications are still yet to be decoded.
 
