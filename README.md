@@ -2,7 +2,7 @@
 
 **[![Build and Deploy](https://github.com/Kards-Stats/kards-json-api/actions/workflows/build-deploy.yml/badge.svg)](https://github.com/Kards-Stats/kards-json-api/actions/workflows/build-deploy.yml)**
 
-Docs can be found here https://kards-stats.github.io/kards-json-api/
+Docs can be found here [https://kards-stats.github.io/kards-json-api/](https://klutzybubbles.github.io/kards-json-api/)
 
 ## What is Kards
 
